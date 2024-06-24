@@ -1,12 +1,12 @@
 function meetAutoReactions() {
   function getElement(xpath) {
     // отримуємо доступ до елемента на сторінці через xpath
-    return document.evaluate(
-      xpath,
-      document,
-      null,
-      XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null,
+    return document.evaluate( //evaluate це метод document формат такий: (xpathExpression, contextNode, namespaceResolver, resultType, result)
+      xpath, // XPath для пошуку елемента
+      document,// весь документ
+      null,// немає namespaceResolver
+      XPathResult.FIRST_ORDERED_NODE_TYPE, // Повертаємо перший знайдений node
+      null,// Немає попередніх результатів
     ).singleNodeValue; // Повертаємо перший знайдений елемент
   }
   function getEmojiButton(index) {
